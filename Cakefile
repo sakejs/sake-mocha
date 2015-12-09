@@ -1,6 +1,9 @@
 require 'shortcake'
 
-use './lib'
+use 'cake-version'
+use 'cake-publish'
+
+use require './lib'
 
 option '-b', '--browser [browser]', 'browser to use for tests'
 option '-g', '--grep [filter]',     'test filter'
@@ -38,10 +41,3 @@ task 'test', 'Run tests', (opts, cb) ->
 
 task 'watch', 'watch for changes and recompile project', ->
   exec 'coffee -bc -m -w -o lib/ src/'
-
-task 'publish', 'publish project', (options) ->
-  exec '''
-  git push
-  git push --tags
-  npm publish
-  '''
