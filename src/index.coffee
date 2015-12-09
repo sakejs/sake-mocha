@@ -1,6 +1,5 @@
 module.exports = (opts = {}) ->
-  (task) ->
-    (require('./server')     opts) task
-    (require('./test')       opts) task
-    (require('./test-ci')    opts) task
-    (require('./test-watch') opts) task
+  require('./server')     opts
+  require('./test')       opts
+  require('./test-ci')    opts
+  require('./test-watch') opts
