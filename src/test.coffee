@@ -1,32 +1,56 @@
 module.exports = (opts) ->
-  (task) ->
-    task 'test', 'Run tests', ['build', 'static-server'], (opts) ->
-      bail     = opts.bail     ? true
-      coverage = opts.coverage ? false
-      grep     = opts.grep     ? ''
-      test     = opts.test     ? 'test/ test/server/ test/browser/'
-      verbose  = opts.verbose  ? ''
+  task 'test', 'Run tests', (opts) ->
+    bail     = opts.bail     ? true
+    coverage = opts.coverage ? false
+    grep     = opts.grep     ? ''
+    test     = opts.test     ? 'test/'
+    verbose  = opts.verbose  ? ''
 
-      bail    = '--bail' if bail
-      grep    = "--grep #{opts.grep}" if grep
-      verbose = 'DEBUG=nightmare VERBOSE=true CROWDSTART_DEBUG=1' if verbose
+    if opts.requireBuild
+      yield invoke 'build'
 
-      if coverage
-        bin = 'istanbul --print=none cover _mocha --'
-      else
-        bin = 'mocha'
+    if opts.serveStatic
+      yield invoke 'static-server', opts.serveStatic
 
-      {status} = yield exec.interactive "NODE_ENV=test CROWDSTART_KEY='' CROWDSTART_ENDPOINT='' #{verbose}
-            #{bin}
-            --colors
-            --reporter spec
-            --timeout 10000000
-            --compilers coffee:coffee-script/register
-            --require co-mocha
-            --require postmortem/register
-            #{bail}
-            #{grep}
-            #{test}"
+    bin     = 'mocha'
+    bail    = '--bail' if bail
+    grep    = "--grep #{opts.grep}" if grep
 
-      server.close()
-      process.exit status if opts.ci
+    # Default env variables for tests
+    env =
+      NODE_ENV: 'test'
+
+    env.VERBOSE = 'true' if verbose
+
+    # Setup addons to have mocha to require
+    addons = [
+      '--compilers coffee:coffee-script/register'
+      '--require co-mocha'
+    ]
+
+    if coverage
+      bin = 'istanbul --print=none cover _mocha --'
+      addons.push 'coffee-coverage/register-istanbul'
+    else
+      addons.push '--require postmortem/register'
+
+    # Update env with anything passed
+    for k,v of opts.env
+      env[k] = v
+
+    # Generate env exports
+    env = (k + '=' + v for k,v of env).join ' '
+
+    {status} = yield exec.interactive "#{env}
+          #{bin}
+          --colors
+          --reporter spec
+          --timeout 10000000
+          #{addons.join '\n'}
+          --recursive
+          #{bail}
+          #{grep}
+          #{test}"
+
+    server.close()
+    process.exit status if status
