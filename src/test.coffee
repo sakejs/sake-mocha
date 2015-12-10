@@ -28,6 +28,7 @@ module.exports = (opts) ->
       '--require co-mocha'
     ]
 
+    # Coverage configuration
     if coverage
       bin = 'istanbul --print=none cover _mocha --'
       addons.push 'coffee-coverage/register-istanbul'
@@ -41,16 +42,22 @@ module.exports = (opts) ->
     # Generate env exports
     env = (k + '=' + v for k,v of env).join ' '
 
-    {status} = yield exec.interactive "#{env}
-          #{bin}
-          --colors
-          --reporter spec
-          --timeout 10000000
-          #{addons.join '\n'}
-          --recursive
-          #{bail}
-          #{grep}
-          #{test}"
+    # Build mocha command
+    cmd = "#{env} #{bin}
+           --colors
+           --reporter spec
+           --timeout 10000000
+           #{addons.join ' '}
+           --recursive
+           #{bail}
+           #{grep}
+           #{test}"
 
+    # Run tests and capture status
+    {status} = yield exec.interactive cmd
+
+    # Close server
     server.close() if opts.serveStatic
+
+    # Exit with test status if non-zero
     process.exit status if status
