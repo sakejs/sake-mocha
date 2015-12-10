@@ -52,5 +52,5 @@ module.exports = (opts) ->
           #{grep}
           #{test}"
 
-    server.close()
+    server.close() if opts.serveStatic
     process.exit status if status
