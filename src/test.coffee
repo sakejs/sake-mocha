@@ -31,7 +31,7 @@ module.exports = (opts) ->
     # Coverage configuration
     if coverage
       bin = 'istanbul --print=none cover _mocha --'
-      addons.push 'coffee-coverage/register-istanbul'
+      addons.push '--require coffee-coverage/register-istanbul'
     else
       addons.push '--require postmortem/register'
 
