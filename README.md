@@ -1,4 +1,6 @@
 # cake-mocha [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![NPM version][npm-image]][npm-url]  [![Gitter chat][gitter-image]][gitter-url]
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/zeekay/cake-mocha.svg)](https://greenkeeper.io/)
 Adds Mocha-powered `test`, `test:ci` and `test:watch' tasks to your `Cakefile.
 
 ## Install
