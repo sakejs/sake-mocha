@@ -4,7 +4,7 @@ use 'cake-bundle'
 use 'cake-outdated'
 use 'cake-publish'
 use 'cake-version'
-# use require './'
+use require './'
 
 option '-b', '--browser [browser]', 'browser to use for tests'
 option '-g', '--grep [filter]',     'test filter'
