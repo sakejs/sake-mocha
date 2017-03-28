@@ -2,14 +2,19 @@
   "name": "cake-mocha",
   "version": "0.0.4",
   "description": "Adds test commands to your Cakefile using mocha.",
-  "main": "lib/",
-  "directories": {
-    "test": "test"
-  },
+  "main": "dist/lib.js",
+  "module": "dist/lib.mjs",
+  "jsnext:main": "dist/lib.mjs",
+  "files": [
+    "dist/",
+    "src/"
+  ],
   "dependencies": {
     "co-mocha": "^1.1.2",
+    "connect": "^3.6.0",
     "mocha": "^2.3.4",
-    "postmortem": "^0.2.4"
+    "postmortem": "^0.2.4",
+    "serve-static": "^1.12.1"
   },
   "devDependencies": {
     "cake-bundle": "^0.2.16",
@@ -20,7 +25,7 @@
     "chai-as-promised": "^5.1.0",
     "codecov.io": "^0.1.6",
     "coffee-coverage": "^0.7.0",
-    "coffee-script": "^1.10.0",
+    "coffee-script": "^1.12.4",
     "coveralls": "^2.11.4",
     "istanbul": "^0.4.1",
     "postmortem": "^0.2.4",
@@ -36,7 +41,7 @@
     "url": "git+https://github.com/zeekay/cake-mocha.git"
   },
   "keywords": [],
-  "author": "Zach Kelling <zk@monoid.io> (http://zeekay.io)",
+  "author": "Zach Kelling <z@zeekay.io>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/zeekay/cake-mocha/issues"
