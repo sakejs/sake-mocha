@@ -1,4 +1,4 @@
-module.exports = (opts) ->
+export default (opts) ->
   task 'test', 'Run tests', (opts) ->
     bail     = opts.bail     ? true
     coverage = opts.coverage ? false

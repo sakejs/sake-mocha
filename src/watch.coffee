@@ -1,4 +1,4 @@
-module.exports = (opts) ->
+export default (opts) ->
   task 'test:watch', 'watch for changes and re-run tests', ->
     invoke 'watch'
 
