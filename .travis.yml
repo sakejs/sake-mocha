@@ -1,13 +1,9 @@
-sudo: false
 language: node_js
 node_js:
   - 7
 script:
-  - node_modules/.bin/shortcake test
-notifications:
-  email:
-    on_success: change
-    on_failure: always
+  - cake build
+  - cake test
 env:
   - CXX=g++-4.8
 addons:
