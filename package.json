@@ -1,6 +1,6 @@
 {
   "name": "cake-mocha",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Adds test commands to your Cakefile using mocha.",
   "main": "lib/cake-mocha.js",
   "module": "lib/cake-mocha.mjs",
