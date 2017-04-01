@@ -2,12 +2,12 @@
   "name": "cake-mocha",
   "version": "0.0.4",
   "description": "Adds test commands to your Cakefile using mocha.",
-  "main": "dist/lib.js",
-  "module": "dist/lib.mjs",
-  "jsnext:main": "dist/lib.mjs",
+  "main": "lib/cake-mocha.js",
+  "module": "lib/cake-mocha.mjs",
+  "jsnext:main": "lib/cake-mocha.mjs",
   "files": [
-    "dist/",
-    "src/"
+    "src/",
+    "lib/"
   ],
   "dependencies": {
     "co-mocha": "1.1.2",
