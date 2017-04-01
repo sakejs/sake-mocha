@@ -18,8 +18,7 @@ task 'build', 'build project', ->
   bundle.write
     entry: 'src/index.coffee'
     compilers:
-      coffee:
-        version: 1
+      coffee: version: 1
 
 task 'watch', 'watch for changes and recompile project', ->
   exec 'coffee -bc -m -w -o lib/ src/'
