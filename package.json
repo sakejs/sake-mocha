@@ -1,10 +1,10 @@
 {
-  "name": "cake-mocha",
+  "name": "sake-mocha",
   "version": "0.1.0",
-  "description": "Adds test commands to your Cakefile using mocha.",
-  "main": "lib/cake-mocha.js",
-  "module": "lib/cake-mocha.mjs",
-  "jsnext:main": "lib/cake-mocha.mjs",
+  "description": "Adds test commands to your sakefile using mocha.",
+  "main": "lib/sake-mocha.js",
+  "module": "lib/sake-mocha.mjs",
+  "jsnext:main": "lib/sake-mocha.mjs",
   "files": [
     "src/",
     "lib/"
@@ -17,26 +17,26 @@
     "serve-static": "1.12.1"
   },
   "devDependencies": {
-    "cake-bundle": "0.2.21",
-    "cake-outdated": "0.1.18",
-    "cake-publish": "0.1.10",
-    "cake-version": "0.1.15",
+    "sake-bundle": "0.2.21",
+    "sake-outdated": "0.1.18",
+    "sake-publish": "0.1.10",
+    "sake-version": "0.1.15",
     "coffee-script": "1.12.4",
-    "shortcake": "1.2.8"
+    "shortsake": "1.2.8"
   },
   "scripts": {
-    "test": "cake test",
-    "prepublishOnly": "cake build"
+    "test": "sake test",
+    "prepublishOnly": "sake build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zeekay/cake-mocha.git"
+    "url": "git+https://github.com/sakejs/sake-mocha.git"
   },
   "keywords": [],
-  "author": "Zach Kelling <z@zeekay.io>",
+  "author": "Hanzo, Inc <hi@hanzo.io",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zeekay/cake-mocha/issues"
+    "url": "https://github.com/sakejs/sake-mocha/issues"
   },
-  "homepage": "https://github.com/zeekay/cake-mocha#readme"
+  "homepage": "https://github.com/sakejs/sake-mocha#readme"
 }
