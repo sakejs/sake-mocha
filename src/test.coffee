@@ -28,6 +28,12 @@ export default (opts) ->
       '--require co-mocha'
     ]
 
+    # Detect sake-chai
+    try
+      require.resolve 'sake-chai'
+      addons.push '--require sake-chai/register'
+    catch err
+
     # Coverage configuration
     if coverage
       bin = 'istanbul --print=none cover _mocha --'
