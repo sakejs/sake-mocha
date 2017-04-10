@@ -27,8 +27,10 @@
     "sake-version": "0.1.16"
   },
   "scripts": {
-    "test": "sake test",
-    "prepublishOnly": "sake build"
+    "build": "sake build",
+    "prepublishOnly": "sake build",
+    "pretest": "sake build",
+    "test": "sake test"
   },
   "repository": {
     "type": "git",
