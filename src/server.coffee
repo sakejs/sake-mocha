@@ -6,7 +6,7 @@ export default (opts) ->
   opts.port    ?= process.env.PORT ? 3333
   opts.dir     ?= process.cwd() + '/test/fixtures'
   opts.message ?= 'Run static server for tests'
-  opts.name    ?= 'static-server'
+  opts.name    ?= 'server'
 
   task opts.name, opts.message, (cb) ->
     app = connect()

@@ -10,9 +10,9 @@ export default (opts) ->
       yield invoke 'build'
 
     if opts.serveStatic
-      yield invoke 'static-server', opts.serveStatic
+      yield invoke 'server', opts.serveStatic
 
-    bin     = 'mocha'
+    bin     = require.resolve('mocha/bin/mocha')
     bail    = '--bail' if bail
     grep    = "--grep #{opts.grep}" if grep
 
