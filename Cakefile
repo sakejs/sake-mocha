@@ -1,9 +1,7 @@
-require 'shortcake'
-
-use 'cake-bundle'
-use 'cake-outdated'
-use 'cake-publish'
-use 'cake-version'
+use 'sake-bundle'
+use 'sake-outdated'
+use 'sake-publish'
+use 'sake-version'
 
 use require './'
 
@@ -20,6 +18,3 @@ task 'build', 'build project', ->
     entry: 'src/index.coffee'
     compilers:
       coffee: version: 1
-
-task 'watch', 'watch for changes and recompile project', ->
-  exec 'coffee -bc -m -w -o lib/ src/'
