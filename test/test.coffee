@@ -1,6 +1,6 @@
 exec = require 'executive'
 
-describe 'cake-mocha', ->
+describe 'sake-mocha', ->
   it 'should add tasks', ->
     {stdout} = yield exec 'sake', cwd: __dirname
     stdout.should.contain 'test'
