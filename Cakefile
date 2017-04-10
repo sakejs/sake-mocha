@@ -3,7 +3,9 @@ use 'sake-outdated'
 use 'sake-publish'
 use 'sake-version'
 
-use require './'
+try
+  use require './'
+catch err
 
 option '-b', '--browser [browser]', 'browser to use for tests'
 option '-g', '--grep [filter]',     'test filter'
