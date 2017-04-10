@@ -35,6 +35,8 @@
   },
   "keywords": [
     "mocha",
+    "tasks",
+    "build",
     "sake"
   ],
   "author": "Hanzo, Inc. <hi@hanzo.io",
