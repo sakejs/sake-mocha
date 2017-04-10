@@ -33,7 +33,10 @@
     "type": "git",
     "url": "git+https://github.com/sakejs/sake-mocha.git"
   },
-  "keywords": [],
+  "keywords": [
+    "mocha",
+    "sake"
+  ],
   "author": "Hanzo, Inc. <hi@hanzo.io",
   "license": "BSD",
   "bugs": {

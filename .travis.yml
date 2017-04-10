@@ -2,8 +2,8 @@ language: node_js
 node_js:
   - 7
 script:
-  - cake build
-  - cake test
+  - node_modules/.bin/sake build
+  - node_modules/.bin/sake test
 env:
   - CXX=g++-4.8
 addons:
