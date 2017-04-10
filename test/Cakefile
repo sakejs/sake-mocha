@@ -1,1 +1,1 @@
-use do require '../'
+use require '../'
