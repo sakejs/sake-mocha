@@ -1,7 +1,7 @@
 {
   "name": "sake-mocha",
   "version": "0.1.5",
-  "description": "Adds test commands to your sakefile using mocha.",
+  "description": "Adds test commands to your Sakefile using mocha.",
   "main": "lib/sake-mocha.js",
   "module": "lib/sake-mocha.mjs",
   "jsnext:main": "lib/sake-mocha.mjs",
@@ -43,7 +43,7 @@
     "sake"
   ],
   "author": "Hanzo, Inc. <hi@hanzo.io",
-  "license": "BSD",
+  "license": "BSD-3-Clause",
   "bugs": {
     "url": "https://github.com/sakejs/sake-mocha/issues"
   },
