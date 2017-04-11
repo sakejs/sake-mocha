@@ -1,7 +1,7 @@
 {
   "name": "sake-mocha",
   "version": "0.1.6",
-  "description": "Adds test commands to your Sakefile using mocha.",
+  "description": "Adds test commands to your Sakefile using mocha",
   "main": "lib/sake-mocha.js",
   "module": "lib/sake-mocha.mjs",
   "jsnext:main": "lib/sake-mocha.mjs",
