@@ -7,7 +7,7 @@
 [![license][license-img]][license-url]
 [![chat][chat-img]][chat-url]
 
-Add `test`, `test:ci` and `test:watch` tasks powered [Mocha][mocha] to your
+Add `test`, `test:ci` and `test:watch` tasks powered by [Mocha][mocha] to your
 Sakefile.
 
 ## Install
