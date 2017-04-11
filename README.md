@@ -18,7 +18,7 @@ $ npm install sake-mocha --save-dev
 ## Usage
 In your Sakefile:
 
-```coffee
+```javascript
 use('sake-mocha')
 ```
 
