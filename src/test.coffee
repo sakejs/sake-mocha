@@ -1,3 +1,5 @@
+import findCoffee from 'find-coffee'
+
 export default (opts) ->
   task 'test', 'Run tests', (opts) ->
     bail     = opts.bail     ? true
@@ -23,10 +25,15 @@ export default (opts) ->
     env.VERBOSE = 'true' if verbose
 
     # Setup addons to have mocha to require
-    addons = [
-      '--compilers coffee:coffee-script/register'
-      '--require co-mocha'
-    ]
+    addons = ['--require co-mocha']
+
+    # Detect coffeescript
+    try
+      coffeePath = findCoffee(lazy=true)
+      coffee = if ~coffeePath.indexOf('coffee-script') then 'coffee-script' else 'coffeescript'
+      addons.push "--compilers coffee:#{coffee}/register"
+      addons.push '--require coffee-coverage/register-istanbul' if coverage
+    catch err
 
     # Detect sake-chai
     try
@@ -37,7 +44,6 @@ export default (opts) ->
     # Coverage configuration
     if coverage
       bin = 'istanbul --print=none cover _mocha --'
-      addons.push '--require coffee-coverage/register-istanbul'
     else
       addons.push '--require postmortem/register'
 
