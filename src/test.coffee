@@ -31,7 +31,7 @@ export default (opts) ->
     try
       coffeePath = findCoffee(lazy=true)
       coffee = if ~coffeePath.indexOf('coffee-script') then 'coffee-script' else 'coffeescript'
-      addons.push "--compilers coffee:#{coffee}/register"
+      addons.push "--require #{coffee}/register"
       addons.push '--require coffee-coverage/register-istanbul' if coverage
     catch err
 
