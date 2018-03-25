@@ -17,7 +17,7 @@
     "serve-static": "1.13.2"
   },
   "devDependencies": {
-    "coffeescript": "1.12.7",
+    "coffeescript": "2.2.3",
     "sake-bundle": "0.6.5",
     "sake-chai": "0.2.5",
     "sake-cli": "0.5.25",
