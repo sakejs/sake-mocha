@@ -5,7 +5,7 @@ export default (opts) ->
     bail     = opts.bail     ? true
     coverage = opts.coverage ? false
     grep     = opts.grep     ? ''
-    test     = opts.test     ? 'test/'
+    test     = opts.test     ? 'test/**/*.{js,coffee}'
     verbose  = opts.verbose  ? ''
 
     if opts.requireBuild
@@ -33,6 +33,7 @@ export default (opts) ->
       coffee = if ~coffeePath.indexOf('coffee-script') then 'coffee-script' else 'coffeescript'
       addons.push "--require #{coffee}/register"
       addons.push '--require coffee-coverage/register-istanbul' if coverage
+      test = "'test/**/*.coffee'" unless opts.test?
     catch err
 
     # Detect sake-chai
